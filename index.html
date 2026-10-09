@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio Pendo Station Shianda - 96.5 FM | Live</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>body{font-family:'Outfit',sans-serif}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+.play-pulse{animation:pulse 2s infinite}</style>
+</head>
+<body class="bg-gray-50">
+<header class="bg-[#B91C1C] text-white sticky top-0 z-50">
+<div class="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#B91C1C] font-black text-xl">🎙️</div>
+<div><h1 class="font-extrabold text-xl">Radio Pendo</h1>
+<p class="text-xs opacity-90">Station Shianda • 96.5 FM • Shianda, Kakamega</p></div>
+<div class="ml-auto text-[10px] bg-white/20 px-2 py-1 rounded-full">LIVE ●</div>
+</div></header>
+
+<div class="max-w-md mx-auto px-4">
+<div class="bg-[#B91C1C] rounded-2xl p-4 text-white text-center mt-4">
+<p class="text-xs">NOW ON AIR (•)</p><h2 class="text-2xl font-black">Asubuhi Pendo</h2>
+<p class="text-sm">Morning Show with DJ Barasa</p></div>
+
+<div class="flex flex-col items-center -mt-8">
+<button id="playBtn" class="w-20 h-20 bg-white border-4 border-[#B91C1C] rounded-full flex items-center justify-center shadow-xl play-pulse text-3xl">▶️</button>
+<h3 class="font-black text-[#B91C1C] text-xl mt-3">Listen Live</h3>
+<audio id="radioStream" src="https://stream.zeno.fm/0r0xa792kwzuv"></audio>
+<div class="grid grid-cols-2 gap-3 w-full mt-4">
+<button onclick="requestSong()" class="border-2 border-[#B91C1C] text-[#B91C1C] rounded-xl py-2 font-semibold text-sm">🎵 Request Song</button>
+<button onclick="shareStream()" class="border-2 border-[#B91C1C] text-[#B91C1C] rounded-xl py-2 font-semibold text-sm">🔗 Share</button>
+</div></div>
+
+<section class="mt-8"><h3 class="font-black border-l-4 border-[#B91C1C] pl-3">Today's Schedule</h3>
+<div class="mt-3 space-y-3">
+<div class="bg-white rounded-xl p-3 shadow-sm"><p class="font-bold text-[#B91C1C] text-sm">06:00 - 10:00</p><p class="font-semibold text-sm">Asubuhi Pendo • Morning Talk & News</p></div>
+<div class="bg-white rounded-xl p-3 shadow-sm"><p class="font-bold text-[#B91C1C] text-sm">10:00 - 14:00</p><p class="font-semibold text-sm">Beats & Talk • Music & Chat</p></div>
+<div class="bg-white rounded-xl p-3 shadow-sm"><p class="font-bold text-[#B91C1C] text-sm">14:00 - 17:00</p><p class="font-semibold text-sm">Pendo Sports • Local Sports Update</p></div>
+</div></section>
+
+<a href="https://wa.me/254718899014?text=Hello%20Radio%20Pendo%20Studio" class="mt-6 bg-[#25D366] text-white rounded-xl p-3 flex items-center gap-3 block">
+<div><p class="font-black text-sm">Chat with Studio on WhatsApp</p><p class="text-xs">Send song request or shoutout</p></div></a>
+</div>
+
+<script>
+const audio=document.getElementById('radioStream'); const btn=document.getElementById('playBtn'); let playing=false;
+btn.onclick=()=>{if(!playing){audio.play();btn.innerHTML='⏸️';playing=true}else{audio.pause();btn.innerHTML='▶️';playing=false}}
+function requestSong(){window.open('https://wa.me/254718899014?text=Request%20song%20for%20Radio%20Pendo','_blank')}
+</script>
+</body></html>
